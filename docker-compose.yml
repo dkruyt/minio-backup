@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: dockerfile
-    image: python-app-backup:latest
+    image: ghcr.io/dkruyt/minio-backup/minio-backup:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /opt:/backup:ro

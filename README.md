@@ -1,3 +1,5 @@
+[![Docker Image CI](https://github.com/dkruyt/minio-backup/actions/workflows/docker-image.yml/badge.svg)](https://github.com/dkruyt/minio-backup/actions/workflows/docker-image.yml)
+
 # 📁 MinIO Backup Service 
 
 This Dockerized Python project creates backups from a specified directory and uploads them to a MinIO or S3 bucket. The script logs each step of the process, including a progress update, to help track how the backup is proceeding. 
@@ -60,7 +62,7 @@ For running this service periodically, you can leverage crontab.
 2. Add the following line to run the script at your prefered time (this example runs it every day at 3 a.m.):
 
    ```
-   0 3 * * * docker run --env-file=/path/to/your/.env -v /opt:/backup:ro python-app-backup
+   0 3 * * * docker run --env-file=/path/to/your/.env -v /opt:/backup:ro ghcr.io/dkruyt/minio-backup/minio-backup:latest
    ```
 
    Be sure to replace `/path/to/your/.env` with the path to your .env file.
