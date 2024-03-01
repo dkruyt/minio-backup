@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: python-app-backup:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /opt:/backup:ro
+    environment:
+      - MINIO_URL
+      - MINIO_ACCESS_KEY
+      - MINIO_SECRET_KEY
+      - MINIO_BUCKET
